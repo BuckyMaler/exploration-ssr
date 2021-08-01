@@ -1,9 +1,9 @@
-import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit';
-import counterReducer from '../features/counter/counterSlice';
+import { Action, configureStore, ThunkAction } from '@reduxjs/toolkit';
+import photosReducer from '../features/masonry-grid/photosSlice';
 
 export const store = configureStore({
   reducer: {
-    counter: counterReducer,
+    photos: photosReducer,
   },
 });
 
