@@ -4,7 +4,6 @@ import {
   createSlice,
   EntityState,
 } from '@reduxjs/toolkit';
-import * as api from '../../app/api';
 import { Photo } from '../../app/models';
 import { RootState } from '../../app/store';
 
@@ -20,16 +19,21 @@ const initialState: PhotosState = photosAdapter.getInitialState({
   status: 'idle',
 });
 
-export const fetchPhotos = createAsyncThunk(
-  'photos/fetchPhotos',
-  async (pageCount: number) => await api.fetchPhotos(pageCount)
-);
+export const fetchPhotos = createAsyncThunk<
+  Array<Photo>,
+  void,
+  { state: RootState }
+>('photos/fetchPhotos', async (_, { getState }) => {
+  const res = await fetch(`/api/photos?page=${getState().photos.pageCount}`);
+
+  return await res.json();
+});
 
 export const photosSlice = createSlice({
   name: 'photos',
   initialState,
   reducers: {},
-  extraReducers: (builder) => {
+  extraReducers(builder) {
     builder
       .addCase(fetchPhotos.pending, (state) => {
         state.status = 'loading';
@@ -48,7 +52,5 @@ export const photosSlice = createSlice({
 export const { selectAll: selectAllPhotos } = photosAdapter.getSelectors(
   (state: RootState) => state.photos
 );
-
-export const selectPageCount = (state: RootState) => state.photos.pageCount;
 
 export default photosSlice.reducer;

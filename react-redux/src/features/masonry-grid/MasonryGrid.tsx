@@ -1,23 +1,22 @@
 import { useEffect } from 'react';
 import InfiniteScroll from 'react-infinite-scroll-component';
 import Masonry from 'react-masonry-css';
-import { fetchPhotos, selectAllPhotos, selectPageCount } from './photosSlice';
+import { fetchPhotos, selectAllPhotos } from './photosSlice';
 import { useAppDispatch, useAppSelector } from '../../app/hooks';
 import styles from './MasonryGrid.module.css';
 
 export function MasonryGrid() {
   const photos = useAppSelector(selectAllPhotos);
-  const pageCount = useAppSelector(selectPageCount);
   const dispatch = useAppDispatch();
 
   useEffect(() => {
-    dispatch(fetchPhotos(pageCount));
+    dispatch(fetchPhotos());
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
     <InfiniteScroll
       dataLength={photos.length}
-      next={() => dispatch(fetchPhotos(pageCount))}
+      next={() => dispatch(fetchPhotos())}
       hasMore={true}
       loader={<></>}
     >

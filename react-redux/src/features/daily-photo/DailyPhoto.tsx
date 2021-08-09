@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-import * as api from '../../app/api';
 import { Photo } from '../../app/models';
 import styles from './DailyPhoto.module.css';
 
@@ -7,9 +6,11 @@ export function DailyPhoto() {
   const [dailyPhoto, setDailyPhoto] = useState<Photo>();
 
   useEffect(() => {
-    api.fetchDailyPhoto().then((photo) => {
-      setDailyPhoto(photo);
-    });
+    fetch('/api/daily-photo')
+      .then((res) => res.json())
+      .then((photo) => {
+        setDailyPhoto(photo);
+      });
   }, []);
 
   return (
