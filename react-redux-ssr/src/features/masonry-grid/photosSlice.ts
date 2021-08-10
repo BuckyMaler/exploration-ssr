@@ -5,7 +5,7 @@ import {
   EntityState,
 } from '@reduxjs/toolkit';
 import { Photo } from '../../app/models';
-import { RootState } from '../../app/store';
+import type { RootState } from '../../app/store';
 
 interface PhotosState extends EntityState<Photo> {
   pageCount: number;
