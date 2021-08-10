@@ -1,21 +1,32 @@
-# Razzle TypeScript Example
+This project was bootstrapped with [Razzle](https://github.com/jaredpalmer/razzle).
 
-## How to use
+## Prerequisites
 
-<!-- START install generated instructions please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN yarn update-examples TO UPDATE -->Create and start the example:
+- [node](https://nodejs.org/en/download/)
+- [yarn](https://yarnpkg.com/en/docs/install)
 
-```bash
-npx create-razzle-app --example with-typescript with-typescript
+## Development
 
-cd with-typescript
-yarn start
+### Accessing the Unsplash API
+
+1. [Create a developer account](https://unsplash.com/join)
+2. [Create a new application](https://unsplash.com/oauth/applications/new)
+3. Copy your application's access key and paste it in a file named `.env` in the `react-redux-ssr` directory
+
 ```
-<!-- END install generated instructions please keep comment here to allow auto update -->
+RAZZLE_API_ACCESS_KEY=abcdef
+```
 
-## Idea behind the example
-This is an of how to use Razzle with [TypeScript](https://github.com/Microsoft/TypeScript).
+### Running the App
 
-Basic razzle will uses Babel to transform TypeScript to plain JavaScript ( with babel-loader ), and uses TypeScript for type-checking.
+Run the following commands from the `react-redux-ssr` directory.
 
-Razzle knows how to resolve `.ts` and `.tsx` files out of the box.
+1. Install the dependencies: `yarn`
+2. Start the client and server: `yarn start`
+
+## Learning Resources
+
+- [Server-side Rendering React from Scratch!](https://www.youtube.com/watch?v=82tZAPMHfT4)
+- [Demystifying server-side rendering in React](https://www.freecodecamp.org/news/demystifying-reacts-server-side-render-de335d408fe4/)
+- [Server Rendering | Redux](https://redux.js.org/usage/server-rendering)
+- [ReactDOMServer - React](https://reactjs.org/docs/react-dom-server.html)
