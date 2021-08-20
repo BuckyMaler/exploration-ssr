@@ -1,14 +1,16 @@
 import { Action, configureStore, ThunkAction } from '@reduxjs/toolkit';
 import photosReducer from '../features/masonry-grid/photosSlice';
 
-const { __PRELOADED_STATE__ } = window as any;
+export function initStore(preloadedState?) {
+  return configureStore({
+    reducer: {
+      photos: photosReducer,
+    },
+    preloadedState,
+  });
+}
 
-export const store = configureStore({
-  reducer: {
-    photos: photosReducer,
-  },
-  preloadedState: __PRELOADED_STATE__,
-});
+let store: ReturnType<typeof initStore>;
 
 export type AppDispatch = typeof store.dispatch;
 export type RootState = ReturnType<typeof store.getState>;

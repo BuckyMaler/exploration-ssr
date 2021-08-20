@@ -1,4 +1,3 @@
-import { configureStore } from '@reduxjs/toolkit';
 import express from 'express';
 import fetch from 'node-fetch';
 import React from 'react';
@@ -6,9 +5,8 @@ import { renderToString } from 'react-dom/server';
 import { Provider } from 'react-redux';
 import App from './App';
 import { Photo } from './app/models';
-import photosReducer, {
-  fetchPhotos as fetchPhotosAsyncThunk,
-} from './features/masonry-grid/photosSlice';
+import { initStore } from './app/store';
+import { fetchPhotos as fetchPhotosAsyncThunk } from './features/masonry-grid/photosSlice';
 
 const server = express();
 
@@ -42,11 +40,7 @@ function jsScriptTagsFromAssets(assets, entrypoint, extra = '') {
 }
 
 async function renderApp() {
-  const store = configureStore({
-    reducer: {
-      photos: photosReducer,
-    },
-  });
+  const store = initStore();
   const [dailyPhoto, photos] = await Promise.all([
     fetchDailyPhoto(),
     fetchPhotos(store.getState().photos.pageCount),

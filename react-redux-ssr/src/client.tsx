@@ -3,9 +3,10 @@ import React from 'react';
 import { hydrate } from 'react-dom';
 import { Provider } from 'react-redux';
 import App from './App';
-import { store } from './app/store';
+import { initStore } from './app/store';
 
-const { __PRELOADED_PROPS__ } = window as any;
+const { __PRELOADED_STATE__, __PRELOADED_PROPS__ } = window as any;
+const store = initStore(__PRELOADED_STATE__);
 
 hydrate(
   <React.StrictMode>
