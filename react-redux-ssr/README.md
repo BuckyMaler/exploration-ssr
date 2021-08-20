@@ -11,7 +11,7 @@ This project was bootstrapped with [Razzle](https://github.com/jaredpalmer/razzl
 
 1. [Create a developer account](https://unsplash.com/join)
 2. [Create a new application](https://unsplash.com/oauth/applications/new)
-3. Copy your application's access key and paste it in a file named `.env` in the `react-redux-ssr` directory
+3. Copy your application's access key and paste it in a file named `.env.local` in the `react-redux-ssr` directory
 
 ```
 RAZZLE_API_ACCESS_KEY=abcdef

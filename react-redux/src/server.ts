@@ -3,7 +3,7 @@ import express from 'express';
 import fetch from 'node-fetch';
 import path from 'path';
 
-dotenv.config();
+dotenv.config({ path: path.resolve(process.cwd(), '.env.local') });
 
 const server = express();
 
