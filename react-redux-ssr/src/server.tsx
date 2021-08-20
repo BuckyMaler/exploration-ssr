@@ -97,22 +97,22 @@ const REQUEST_OPTIONS = {
 };
 
 async function fetchDailyPhoto(): Promise<Photo> {
-  const unsplashRes = await fetch(
+  const res = await fetch(
     `${API_LOCATION}/collections/1459961`,
     REQUEST_OPTIONS
   );
-  const { cover_photo } = await unsplashRes.json();
+  const { cover_photo } = await res.json();
 
   return cover_photo;
 }
 
 async function fetchPhotos(page: string | number): Promise<Array<Photo>> {
-  const unsplashRes = await fetch(
+  const res = await fetch(
     `${API_LOCATION}/photos?page=${page}`,
     REQUEST_OPTIONS
   );
 
-  return await unsplashRes.json();
+  return await res.json();
 }
 
 server.get(
