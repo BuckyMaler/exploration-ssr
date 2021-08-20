@@ -1,0 +1,24 @@
+.masonryGrid {
+  display: flex;
+  max-width: 1320px;
+  margin: 0 auto;
+}
+
+.masonryGridColumn {
+  padding: 0 12px;
+}
+
+.masonryGridColumn > img {
+  width: 100%;
+  margin-bottom: 24px;
+}
+
+@media (max-width: 767px) {
+  .masonryGridColumn {
+    padding: 0;
+  }
+
+  .masonryGridColumn > img {
+    margin-bottom: 50px;
+  }
+}

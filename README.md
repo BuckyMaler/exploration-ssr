@@ -8,6 +8,7 @@ Learn with me by fixing a bug or [starting a discussion](https://github.com/Buck
 | -------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- |
 | [react-redux](https://github.com/BuckyMaler/exploration-ssr/tree/master/react-redux)         | Single page app using React and Redux.                                                              |
 | [react-redux-ssr](https://github.com/BuckyMaler/exploration-ssr/tree/master/react-redux-ssr) | Single page app using React and Redux. Plus, server-side rendering using React, Redux, and Express. |
+| [next-redux-ssr](https://github.com/BuckyMaler/exploration-ssr/tree/master/next-redux-ssr)   | Next.js app using Redux with server-side rendering.                                                 |
 
 ## Contributing
 
