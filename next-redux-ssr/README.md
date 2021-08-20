@@ -1,4 +1,4 @@
-This project was bootstrapped with [Next.js](https://github.com/vercel/next.js).
+This project was bootstrapped with [Create Next App](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Prerequisites
 
