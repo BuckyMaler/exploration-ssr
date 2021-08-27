@@ -7,7 +7,9 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Development
 
-### Accessing the Unsplash API
+### Accessing the Unsplash API (not required)
+
+Note: If you skip this the app will fallback to mock data.
 
 1. [Create a developer account](https://unsplash.com/join)
 2. [Create a new application](https://unsplash.com/oauth/applications/new)

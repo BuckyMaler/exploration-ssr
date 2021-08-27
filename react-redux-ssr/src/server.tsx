@@ -7,6 +7,11 @@ import App from './App';
 import { Photo } from './app/models';
 import { initStore } from './app/store';
 import { fetchPhotos as fetchPhotosAsyncThunk } from './features/masonry-grid/photosSlice';
+import { server as mockServer } from './mocks/server';
+
+if (!process.env.RAZZLE_API_ACCESS_KEY) {
+  mockServer.listen();
+}
 
 const server = express();
 

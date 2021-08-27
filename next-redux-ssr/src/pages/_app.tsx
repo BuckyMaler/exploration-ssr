@@ -4,6 +4,11 @@ import React from 'react';
 import { Provider } from 'react-redux';
 import { initStore } from '../app/store';
 
+if (typeof window === 'undefined' && !process.env.API_ACCESS_KEY) {
+  const { server } = require('../mocks/server');
+  server.listen();
+}
+
 function App({ Component, pageProps }: AppProps) {
   const store = initStore(pageProps.preloadedState);
 

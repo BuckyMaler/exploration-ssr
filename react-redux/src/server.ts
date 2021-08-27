@@ -2,8 +2,13 @@ import dotenv from 'dotenv';
 import express from 'express';
 import fetch from 'node-fetch';
 import path from 'path';
+import { server as mockServer } from './mocks/server';
 
 dotenv.config({ path: path.resolve(process.cwd(), '.env.local') });
+
+if (!process.env.API_ACCESS_KEY) {
+  mockServer.listen();
+}
 
 const server = express();
 
